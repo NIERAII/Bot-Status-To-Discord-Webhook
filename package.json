@@ -1,0 +1,23 @@
+{
+  "name": "bot-status-to-discord-webhook",
+  "version": "0.0.2",
+  "description": "Scipt for pinging your bots and sending status to webhooks",
+  "main": "pingState.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NIERAII/Bot-Status-To-Discord-Webhook.git"
+  },
+  "author": "NIERAI",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NIERAII/Bot-Status-To-Discord-Webhook/issues"
+  },
+  "homepage": "https://github.com/NIERAII/Bot-Status-To-Discord-Webhook#readme",
+  "dependencies": {
+    "async-exit-hook": "^2.0.1",
+    "discord.js": "^14.15.2"
+  }
+}
