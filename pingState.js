@@ -3,7 +3,7 @@ const http = require('http');
 const https = require('https');
 const exitHook = require('async-exit-hook');
 
-// Webhooks set up, you can safely delete unnecessary ones or add more
+// * Webhooks set up, you can safely delete unnecessary ones or add more
 const webhooks = {
   test: new WebhookClient({ url: '' }),
   example: new WebhookClient({ url: '' }),
@@ -25,22 +25,22 @@ const embedFail = new EmbedBuilder()
 let bots 
 
 debug = false 
-stateInterval = 60000 * 3 // interval between ping requests, in this case 3 minutes
+stateInterval = 60000 * 3 // Interval between ping requests, in this case 3 minutes
 
 if (debug == true) {
   bots = {
     SS: {
-      name: "Shapeshifter", // Bot name
-      pfp: "", // [Optional] Picture that will be used in embed (Should be a direct link)
-      pingUrl: "http://localhost:0839/ping", // URL for pinging the bot (Or any other service)
-      webHooks: ["test", "example", "sample"], // Webhooks that will be executed for status updates
-      deletePrevious: ["test"], // [Optional] Which webhooks will delete previous message [Status updates and proccess exit]
+      name: "Shapeshifter", // * Bot name
+      pfp: "", // * [Optional] Picture that will be used in embed (Should be a direct link)
+      pingUrl: "http://localhost:0839/ping", // * URL for pinging the bot (Or any other service)
+      webHooks: ["test", "example", "sample"], // * Webhooks that will be executed for status updates
+      deletePrevious: ["test"], // * [Optional] Which webhooks will delete previous message [Status updates and proccess exit]
       onOffline: { 
         test: "This is a test",
         sample: "And this is too"
-      }, // [Optional] When bot is offline, sends message aside from embed, you can use this to ping someone
-      lastState: "None", // Recommended to keep this unchanged
-      messageIds: {} // And this
+      }, // * [Optional] When bot is offline, sends message aside from embed, you can use this to ping someone
+      lastState: "None", // * Recommended to keep this unchanged
+      messageIds: {} // * And this
     }
   }
 }
@@ -147,7 +147,7 @@ function stopPinging() {
   console.log("Stopped pinging URLs.");
 } 
 
-// Deltes messages before exit, 
+// Deletes messages before exit, 
 // ! On windows process.kill(signal) immediately kills the process, and does not fire signal events,
 // ! and as such, cannot be used to gracefully exit.
 exitHook(callback => {
