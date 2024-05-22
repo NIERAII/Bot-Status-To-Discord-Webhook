@@ -102,7 +102,7 @@ async function main(bot) {
           }
           webhooks[webHook]?.send({
             embeds: [embedSuccess]
-          }).catch(() => {}).then(hook => {bot.messageIds[webHook] = hook.id});
+          }).catch(() => {}).then(hook => {bot.messageIds[webHook] = hook.id}).catch(() => {console.log("Webhook failure")});
         });
     }
   } catch (error) {
@@ -120,7 +120,7 @@ async function main(bot) {
           webhooks[webHook]?.send({
             content: `${ bot.onOffline[webHook] ? `${bot.onOffline[webHook]}` : " "}`,
             embeds: [embedFail]
-          }).catch(() => {}).then(hook => {bot.messageIds[webHook] = hook.id});
+          }).catch(() => {}).then(hook => {bot.messageIds[webHook] = hook.id}).catch(() => {console.log("Webhook failure")});
         });
     }
   }
